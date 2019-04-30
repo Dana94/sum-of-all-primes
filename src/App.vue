@@ -1,11 +1,14 @@
 <template>
   <div id="app" class="container">
+    <new-number></new-number>
     <number-grid :number="number"></number-grid>
   </div>
 </template>
 
 <script>
 import NumberGrid from './components/NumberGrid.vue';
+import NewNumber from './components/NewNumber.vue';
+
 
 export default {
   name: 'app',
@@ -15,7 +18,8 @@ export default {
     }
   },
   components: {
-    NumberGrid
+    NumberGrid,
+    NewNumber
   }
 }
 </script>
