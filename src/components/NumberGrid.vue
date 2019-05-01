@@ -1,6 +1,8 @@
 <template>
   <div class="row">
-    <number v-for="n in number" :key="n.id">{{ n }}</number>
+    <template v-if="checkNumber">
+      <number v-for="n in number" :key="n.id">{{ n }}</number>
+    </template>
   </div>
 </template>
 
@@ -13,11 +15,12 @@ export default {
   },
   computed: {
     checkNumber(){
-      if(number <= 1){
+      if(this.number <= 1){
         alert('Enter a number greater than or equal to 2!');
+        return false;
       }
       else {
-        return number;
+        return true;
       }
 
     }
