@@ -7,10 +7,11 @@
         aria-label="user-number"
         aria-describedby="enter-number"
         v-model.number="number"
+        @keydown.enter="submitNumber"
       >
-      <div class="input-group-append">
+      <!-- <div class="input-group-append">
         <button class="btn btn-outline-secondary" type="button" id="enter-number">Change Number</button>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
@@ -20,6 +21,11 @@ export default {
   data() {
     return {
       number: 0
+    }
+  },
+  methods: {
+    submitNumber() {
+      this.$emit('numberChanged', this.number);
     }
   }
 };

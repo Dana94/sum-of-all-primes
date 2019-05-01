@@ -1,6 +1,6 @@
 <template>
   <div id="app" class="container">
-    <new-number></new-number>
+    <new-number @numberChanged="number = $event"></new-number>
     <number-grid :number="number"></number-grid>
   </div>
 </template>
@@ -14,7 +14,7 @@ export default {
   name: 'app',
   data () {
     return {
-      number: 10
+      number: 1
     }
   },
   components: {
