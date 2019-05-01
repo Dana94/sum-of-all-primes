@@ -1,6 +1,6 @@
 <template>
   <div class="row">
-    <div class="input-group mb-3">
+    <div class="input-group mb-3 col-6 offset-3">
       <input
         type="text"
         class="form-control"
@@ -9,9 +9,6 @@
         v-model.number="number"
         @keydown.enter="submitNumber"
       >
-      <!-- <div class="input-group-append">
-        <button class="btn btn-outline-secondary" type="button" id="enter-number">Change Number</button>
-      </div> -->
     </div>
   </div>
 </template>
@@ -21,15 +18,19 @@ export default {
   data() {
     return {
       number: 0
-    }
+    };
   },
   methods: {
     submitNumber() {
-      this.$emit('numberChanged', this.number);
+      this.$emit("numberChanged", this.number);
     }
   }
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
+input {
+  margin: 0 auto;
+}
 </style>
+

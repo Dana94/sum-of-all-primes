@@ -7,27 +7,24 @@
 </template>
 
 <script>
-import Number from './Number.vue';
+import Number from "./Number.vue";
 export default {
-  props: ['number'],
+  props: ["number"],
   components: {
     Number
   },
   computed: {
-    checkNumber(){
-      if(this.number <= 1){
-        alert('Enter a number greater than or equal to 2!');
+    checkNumber() {
+      if (this.number <= 1) {
+        alert("Enter a number greater than or equal to 2!");
         return false;
-      }
-      else {
+      } else {
         return true;
       }
-
     }
   }
-}
+};
 </script>
 
 <style>
-
 </style>
