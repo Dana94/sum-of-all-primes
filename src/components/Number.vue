@@ -1,9 +1,10 @@
 <template>
-  <div class="col-xs-1 number-grid"><slot></slot></div>
+  <div class="col-xs-1 number-grid" :style="{backgroundColor: myBackgroundColor}"><slot></slot></div>
 </template>
 
 <script>
 export default {
+  props: ['myBackgroundColor']
 
 }
 </script>

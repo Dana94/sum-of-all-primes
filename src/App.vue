@@ -6,25 +6,23 @@
 </template>
 
 <script>
-import NumberGrid from './components/NumberGrid.vue';
-import NewNumber from './components/NewNumber.vue';
-
+import NumberGrid from "./components/NumberGrid.vue";
+import NewNumber from "./components/NewNumber.vue";
 
 export default {
-  name: 'app',
-  data () {
+  name: "app",
+  data() {
     return {
       number: 2
-    }
+    };
   },
   components: {
     NumberGrid,
     NewNumber
-  }
-}
+  },
+  methods: {}
+};
 </script>
 
 <style lang="scss" scoped>
-
-
 </style>
