@@ -4,7 +4,7 @@
 
 <script>
 export default {
-  props: ['myBackgroundColor']
+  props: ['myBackgroundColor', 'isPrime']
 
 }
 </script>
