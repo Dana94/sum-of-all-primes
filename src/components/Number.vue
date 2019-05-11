@@ -7,6 +7,7 @@ export default {
   props: ['myBackgroundColor', 'isPrime']
 
 }
+
 </script>
 
 <style lang="scss" scoped>
