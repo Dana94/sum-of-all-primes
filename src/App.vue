@@ -13,7 +13,7 @@ export default {
   name: "app",
   data() {
     return {
-      number: 2
+      number: 120
     };
   },
   components: {

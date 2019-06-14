@@ -1,6 +1,6 @@
 <template>
   <div class="row">
-    <template v-if="checkNumber">
+    <!-- <template v-if="checkNumber">
       <number
         v-for="n in findPrimes"
         :key="n.id"
@@ -8,7 +8,14 @@
         my-background-color
         :class="{prime: isPrime}"
       >{{ n }}</number>
-    </template>
+    </template>-->
+      <number
+        v-for="n in number"
+        :key="n.id"
+        v-if="n != 1"
+        my-background-color
+        :class="{prime: isPrime}"
+      >{{ n }}</number>
   </div>
 </template>
 
