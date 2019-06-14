@@ -1,6 +1,6 @@
 <template>
   <div id="app" class="container">
-    <new-number @numberChanged="number = $event"></new-number>
+    <!-- <new-number @numberChanged="number = $event"></new-number> -->
     <number-grid :number="number"></number-grid>
   </div>
 </template>
