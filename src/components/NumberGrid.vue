@@ -1,13 +1,12 @@
 <template>
   <div class="row">
-    <number v-for="n in number" :key="n.id" :number="n"></number>
+    <number v-for="n in maxNumber" :key="n.id" :number="n"></number>
   </div>
 </template>
 
 <script>
 import Number from "./Number.vue";
 export default {
-  // props: ["number"],
   data() {
     return {
       primes: []
@@ -17,8 +16,8 @@ export default {
     Number
   },
   computed: {
-    number() {
-      return this.$store.getters.getNumber;
+    maxNumber() {
+      return this.$store.getters.getMaxNumber;
     },
     // checkNumber() {
     //   if (this.number <= 1) {
@@ -57,12 +56,10 @@ export default {
     }
   },
   updated() {
-    // can change the props here!
-    // gives a warning...
+
     // https://vuejs.org/v2/guide/components-props.html#One-Way-Data-Flow
     // https://stackoverflow.com/questions/39868963/vue-2-mutating-props-vue-warn
-    // console.log(this.$refs.num[0].$props);
-    // this.$refs.num[0].$props.myBackgroundColor = 'green';
+
   }
 };
 </script>
