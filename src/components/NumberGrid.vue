@@ -1,31 +1,15 @@
 <template>
   <div class="row">
-    <!-- <template v-if="checkNumber">
-      <number
-        v-for="n in findPrimes"
-        :key="n.id"
-        ref="num"
-        my-background-color
-        :class="{prime: isPrime}"
-      >{{ n }}</number>
-    </template>-->
-      <number
-        v-for="n in number"
-        :key="n.id"
-        v-if="n != 1"
-        my-background-color
-        :class="{prime: isPrime}"
-      >{{ n }}</number>
+    <number v-for="n in number" :key="n.id" :number="n"></number>
   </div>
 </template>
 
 <script>
 import Number from "./Number.vue";
 export default {
-  props: ["number"],
+  // props: ["number"],
   data() {
     return {
-      isPrime: true,
       primes: []
     };
   },
@@ -33,36 +17,39 @@ export default {
     Number
   },
   computed: {
-    checkNumber() {
-      if (this.number <= 1) {
-        alert("Enter a number greater than or equal to 2!");
-        return false;
-      } else {
-        return true;
-      }
+    number() {
+      return this.$store.getters.getNumber;
     },
-    findPrimes() {
-      this.primes = [];
+    // checkNumber() {
+    //   if (this.number <= 1) {
+    //     alert("Enter a number greater than or equal to 2!");
+    //     return false;
+    //   } else {
+    //     return true;
+    //   }
+    // },
+    // findPrimes() {
+    //   this.primes = [];
 
-      for (let i = 2; i <= this.number; i++) {
-        this.primes.push(i);
-      }
-      // all the numbers (all show in the grid)
-      console.log(this.primes);
-      // probably look for a better solution...
-      for (let i = 0; i < this.primes.length - 1; i++) {
-        for (let j = i + 1; j < this.primes.length; j++) {
-          if (this.primes[j] % this.primes[i] == 0) {
-            console.log(this.primes[j], " index: ", j);
-            this.primes.splice(j, 1);
-            j -= 1;
-          }
-        }
-      }
-      console.log(this.primes);
-      console.log(this.primes.reduce(this.arraySum));
-      return this.primes;
-    }
+    //   for (let i = 2; i <= this.number; i++) {
+    //     this.primes.push(i);
+    //   }
+    //   // all the numbers (all show in the grid)
+    //   console.log(this.primes);
+    //   // probably look for a better solution...
+    //   for (let i = 0; i < this.primes.length - 1; i++) {
+    //     for (let j = i + 1; j < this.primes.length; j++) {
+    //       if (this.primes[j] % this.primes[i] == 0) {
+    //         console.log(this.primes[j], " index: ", j);
+    //         this.primes.splice(j, 1);
+    //         j -= 1;
+    //       }
+    //     }
+    //   }
+    //   console.log(this.primes);
+    //   console.log(this.primes.reduce(this.arraySum));
+    //   return this.primes;
+    // }
   },
   methods: {
     arraySum: function(acc, curr) {

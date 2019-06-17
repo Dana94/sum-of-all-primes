@@ -1,15 +1,17 @@
 <template>
-  <div class="col-xs-1 number-grid" :style="{backgroundColor: myBackgroundColor}"><slot></slot></div>
+  <div class="col-xs-1 number-grid" v-if="number != 1">{{number}}</div>
 </template>
 
 <script>
-
-
 export default {
-  props: ['myBackgroundColor', 'isPrime']
+  props: ['number'],
+  data() {
+    return {
+      marked: false
+    }
+  }
 
 }
-
 </script>
 
 <style lang="scss" scoped>
